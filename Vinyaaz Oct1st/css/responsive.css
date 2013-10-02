@@ -1,0 +1,25 @@
+
+.left_tiles {display:none;}
+.top_images {float:left;width:520px;}
+.home_right_text {float:left;width:420px;margin-left:60px;text-align:center;}
+.embedvideo{width:500px;height:300px;}
+.differentiators_content{float:left;width:670px;height:100%;padding:10px 0 10px 30px;}
+
+
+/***** Media Queries ******/
+
+/* iPads (portrait and landscape) ----------- */
+@media screen and (min-width: 760px) and (max-width: 1024px) {	
+}
+/* iPads (portrait only) ----------- */
+@media screen and (min-width: 760px) and (max-width: 1024px) and (orientation : portrait) {	
+    .left_tiles{display:inline-block;width:22%;padding-right:3%;float:left;min-height:500px;}
+    .right_content{width:75%;float:left;}
+    .nonIpad{display:none;}
+    .top_images{float:left;width:50%;}
+    .embedvideo{width:100%;height:300px;}
+    .home_right_text {float:left;width:50%;margin-left:0%;text-align:center;}
+    .og-grid{padding:0;}
+    .og-grid li{background:#DDD;}
+    .differentiators_content{width:100%;padding:10px 0 10px 0px;}
+}

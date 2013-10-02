@@ -1,0 +1,253 @@
+/* GALLERY ------------------------------------------------------------*/
+
+.gallery, .create, .organise{
+	overflow: hidden;
+	width: 100%;
+}
+.gallery li, .create li, .box-container{
+	display: block;
+	position: relative;
+	width: 216px;
+	height: 315px;
+	float: left;
+	margin: 10px 17px;
+}
+.create li{
+    height: 160px;
+}
+.gallery li img, .create li img, .box-container img{
+	border: 1px solid #fff;
+	-webkit-box-shadow: 0 0px 3px #000;     
+	-moz-box-shadow: 0 0px 3px #000;  
+	box-shadow: 0 0px 3px #000;
+	max-width:220px;
+	max-height:280px;
+}
+.gallery li span, .create li span{
+	display: none;
+	position: absolute;
+	top:  30%;
+	/*left: 30%;*/
+	background:#e8e8e8;
+	padding:5px 10px;
+	font-size:18px;
+	z-index:9;
+}
+.create li span.select:after{
+	content:'Select +';
+}
+.gallery li:hover span, .create li:hover span{
+	display: block;
+}
+.gallery li span{
+    font-size:12px;
+    width:40px;
+    background:#333;
+    color:#FFF;
+    opacity:0.8;
+}
+/*-- Gallery specific --*/
+.gallery li span.select:after{
+	content:'Edit';
+}
+.gallery li span.del:after{
+	content:'Delete';
+}
+.gallery li span.pub:after{
+	content:'Publish';
+}
+.gallery li span.select {
+    right:0%;
+    top:10%;
+    cursor:pointer;
+}
+.gallery li span.del {
+    right:0%;
+    top:25%;
+    cursor:pointer;
+}
+.gallery li span.pub {
+    right:0%;
+    top:40%;
+    cursor:pointer;
+}
+/*-- end of gallery specific --*/
+
+.create li span:hover{
+    transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+}
+.create li:hover img{
+    opacity:0.5;
+    z-index:1;
+}
+.gallery li em, .create li em, .box-container em{
+	display: block;
+	font-size: 14px;
+	margin-top: 5px;
+	font-style:normal;
+}
+.create li em{
+    position:absolute;
+    left:1px;
+    width:220px;
+    padding:3px 5px;
+    opacity:0.7;
+    bottom:3px;
+    background:#111;
+    color:#FFF;
+}
+
+
+/* Organise products -----------------------------------------------------------------*/
+ul.diff li{font-size:20px;padding:25px 0;border-bottom:1px solid #EEE;opacity:0.6;}
+ul.diff li:hover{background:#E8E8E8;opacity:1;text-shadow:1px 1px 2px #999;}
+ul.diff li.selected{background:#E8E8E8;opacity:1;text-shadow:1px 1px 2px #999;border:1px solid #999;border-right:none;}
+
+/* Create Brochure -------------------------------------------------------------------*/
+
+#workArea{float:left;width:610px;height:950px;border:1px solid #e8e8e8;}
+.toolbar{background:#e8e8e8;padding:5px;text-align:right;}
+.toolbar a img{margin-left:15px;}
+#resourceArea{float:left;margin-left:26px;width:350px;height:950px;border:1px solid #e8e8e8;}
+
+.data_button{width:175px;display:block;float:left;padding:5px 0;}
+.data_button_selected{background:#EEE;color:#666;}
+
+.overlay {display:none;position:absolute;background:#000;height:100%; width:100%;bottom:0;left:0;opacity:0.8;z-index:123;}
+.overlay_message {display:none;position:relative;top:30px;z-index:125;text-align:center;}
+
+.organise {padding-top:3px;}
+.organise li{
+	display: block;
+	position: relative;
+	width: 77px;
+	height: 77px;
+	float: left;
+	margin: 0 3px 10px;
+	border:1px solid #EEE;
+	/*
+    background-color:transparent;
+    background-repeat:no-repeat;
+    -o-background-size:95% auto;
+    -moz-background-size:95% auto;
+    -webkit-background-size:95% auto;
+    background-size:95% auto;
+    background-position:center;
+    cursor:move;
+    */
+}
+.organise li img{
+    max-width:75px;
+    max-height:75px;
+    cursor:move;
+}
+.organise li:hover{
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    box-shadow:0px 1px 2px #666;
+}
+.organise selImg.over {
+    border:1px dashed #999;
+}
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+/* PUBLISH ------------------------------------------------------------*/
+
+.publish_block {float:left;width:230px;margin:10px 0 0 20px;}
+.publish_block p {text-align:justify;}
+ul.publishgallery  {padding-left:35px;}
+.publishgallery li, .box-container {
+    height: 170px;
+    width: 250px;
+    background:#e8e8e8;
+    box-shadow:0 1px 3px #999;
+    margin:0 70px 35px 0;
+}
+.publishgallery li img, .box-container img {
+    max-height: 75px;
+    max-width: 75px;
+    border:5px solid #F8F8F8;
+    position:absolute;
+    left:-30px;top:15px;
+}
+.publishgallery li section, .box-container section {
+    margin-left:45px;
+    padding:5px;
+}
+.publishgallery li section h4, .box-container section h4{
+    font-weight:bold;
+    font-size:16px;
+    text-transform:uppercase;
+}
+.publishgallery li section p, .box-container section p{
+    text-align:justify;
+}
+.publishgallery li span{
+    font-size:12px;
+    width:40px;
+    background:#333;
+    color:#FFF;
+    opacity:0.8;
+}
+.publishgallery li em, .box-container em{
+    font-weight:bold;font-size:12px;
+    float:right;padding:2px 3px;
+    position:absolute;bottom:10px;right:10px;
+    text-transform:uppercase;
+}
+.publishgallery li span.select:after{
+	content:'Edit';
+}
+.publishgallery li span.del:after{
+	content:'Delete';
+}
+.publishgallery li span.select {
+    right:0%;
+    top:10%;
+    cursor:pointer;
+}
+.publishgallery li span.del {
+    right:0%;
+    top:18%;
+    cursor:pointer;
+}
+input.bchkbox {width:20px;vertical-align:top;}
+
+/* PORTFOLIO FILTER ------------------------------------------------------------*/
+
+#portfolio-filter{
+	display: block;
+	overflow: hidden;
+	margin: 15px 0 20px 10px;
+	border-bottom:1px solid #EEE;
+}
+
+#portfolio-filter li{
+	display: block;
+	float: left;
+	margin-right: 8px;
+	margin-bottom: 5px;
+	width:100px;
+	background:#f8f8ff;
+	padding:2px 5px;
+}
+
+#portfolio-filter li:first-child{
+	color: #49494b;
+	margin-top: 5px;
+	width:auto;
+	font-weight:bold;
+	background:transparent;
+}
+#portfolio-filter li:nth-child(2){
+	width:50px;
+}

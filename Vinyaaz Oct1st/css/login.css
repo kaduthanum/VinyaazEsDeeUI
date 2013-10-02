@@ -1,0 +1,464 @@
+/* remove default styles and reset the whole thing */
+a.hiddenanchor{
+	display: none;
+}
+/** The wrapper that will contain our two forms **/
+#wrapper{
+	right: 0px;
+	min-height: 195px;	
+	/*margin: 0px auto;	
+	width: 450px;
+	*/
+	position: relative;	
+}
+/**** Styling the form elements **/
+
+/**** general text styling ****/
+#wrapper a, .vnform a{
+	color: #999;
+}
+
+#wrapper h3, .vnform h3{
+	font-size: 24px;
+	padding: 2px 0 10px 0;
+	font-family: 'Times New Roman','Arial Narrow',Arial,sans-serif;
+	font-weight: bold;
+	text-align: left;
+	text-shadow:none;
+}
+#wrapper h3:after, .vnform h3:after{
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 2px;
+}
+#wrapper p, .vnform p{
+	margin-bottom:10px;
+	line-height:16px;
+	text-align:left;
+}
+#wrapper label{
+	color: rgb(64, 92, 96);
+	position: relative;
+}
+
+/**** advanced input styling ****/
+/* placeholder */
+::-webkit-input-placeholder  { 
+	color: rgb(190, 188, 188); 
+	font-style: italic;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder{ 
+	color: rgb(190, 188, 188);
+	font-style: italic;
+} 
+input {
+  outline: none;
+}
+
+/* all the input except submit and checkbox */
+#wrapper input:not([type="checkbox"]), #wrapper select, .vnform input:not([type="checkbox"]), .vnform select, .vnform textarea {
+	width: 97%;
+	margin-top: 4px;
+	padding:5px;	
+	border: 1px solid rgb(178, 178, 178);
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	  -moz-box-sizing : content-box;
+	       box-sizing : content-box;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+#wrapper input#emailsignup{
+    margin-top:10px;
+}
+
+/** the data icons 
+[data-icon]:after {
+    content: attr(data-icon);
+    font-family: 'FontomasCustomRegular';
+    color: rgb(106, 159, 171);
+    position: absolute;
+    left: 10px;
+    top: 35px;
+	width: 30px;
+}
+**/
+
+/*styling both submit buttons */
+#wrapper p.button input,#wrapper p.button a.forgotpassword, .vnform p.button input, .vnform p.button a.forgotpassword{
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    
+	width: 155px;
+	cursor: pointer;
+    background:url("../images/action-arrow.gif") no-repeat scroll 91% 5px #545F6A;
+    border:1px solid #B2B2B2;
+    padding:6px 5px;
+    display:block;
+    outline:none;
+    float:left;
+    text-align:left;
+    color:#FFF;
+	margin: 5px 0;
+}
+#wrapper p.button input:hover, .vnform p.button input:hover{
+    background:url("../images/action-arrow.gif") no-repeat scroll 91% -36px #ECECEC;
+	color:#444;
+}
+#wrapper p.button input.login_button, .vnform p.button input.login_button{
+    float:right
+}
+#wrapper p.button a.forgot_password, .vnform p.button a.forgot_password{
+    background:url("../images/action-arrow.gif") no-repeat scroll 91% -37px #DDD;
+	color:#222;
+	padding:7px 5px;
+}
+
+/* styling the checkbox "keep me logged in"*/
+.keeplogin{
+	margin-top: 10px;
+}
+.keeplogin input, .keeplogin label, .vnform .keeplogin input, .vnform .keeplogin label{
+	display: inline-block;
+	font-size: 12px;	
+	font-style: italic;
+}
+.keeplogin input#loginkeeping{
+	margin-right: 5px;
+	width:10px;
+}
+.keeplogin label{
+	width: 80%;
+}
+
+
+/*styling the links to change from one form to another */
+/*
+p.change_link{
+	position: absolute;
+	color: rgb(127, 124, 124);
+	left: 0px;
+	height: 20px;
+	width: 440px;
+	padding: 17px 30px 20px 30px;
+	font-size: 16px	;
+	text-align: right;
+	border-top: 1px solid rgb(219, 229, 232);
+	-webkit-border-radius: 0 0  5px 5px;
+	   -moz-border-radius: 0 0  5px 5px;
+	        border-radius: 0 0  5px 5px;
+	background: rgb(225, 234, 235);
+	background: -moz-repeating-linear-gradient(-45deg, 
+	rgb(247, 247, 247) , 
+	rgb(247, 247, 247) 15px, 
+	rgb(225, 234, 235) 15px, 
+	rgb(225, 234, 235) 30px, 
+	rgb(247, 247, 247) 30px
+	);
+	background: -webkit-repeating-linear-gradient(-45deg, 
+	rgb(247, 247, 247) , 
+	rgb(247, 247, 247) 15px, 
+	rgb(225, 234, 235) 15px, 
+	rgb(225, 234, 235) 30px, 
+	rgb(247, 247, 247) 30px
+	);
+	background: -o-repeating-linear-gradient(-45deg, 
+	rgb(247, 247, 247) , 
+	rgb(247, 247, 247) 15px, 
+	rgb(225, 234, 235) 15px, 
+	rgb(225, 234, 235) 30px, 
+	rgb(247, 247, 247) 30px
+	);
+	background: repeating-linear-gradient(-45deg, 
+	rgb(247, 247, 247) , 
+	rgb(247, 247, 247) 15px, 
+	rgb(225, 234, 235) 15px, 
+	rgb(225, 234, 235) 30px, 
+	rgb(247, 247, 247) 30px
+	);
+}
+#wrapper p.change_link a {
+	display: inline-block;
+	font-weight: bold;
+	background: rgb(247, 248, 241);
+	padding: 2px 6px;
+	color: rgb(29, 162, 193);
+	margin-left: 10px;
+	text-decoration: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid rgb(203, 213, 214);
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s  linear;
+	-o-transition: all 0.4s linear;
+	-ms-transition: all 0.4s  linear;
+	transition: all 0.4s  linear;
+}
+#wrapper p.change_link a:hover {
+	color: rgb(57, 191, 215);
+	background: rgb(247, 247, 247);
+	border: 1px solid rgb(74, 179, 198);
+}
+#wrapper p.change_link a:active{
+	position: relative;
+	top: 1px;
+}
+*/
+/** Styling both forms **/
+#forgotpassword, 
+#login{
+	position: absolute;
+	top: 0px;
+	width: 100%;	
+	/*padding: 0px 6% 60px 6%;*/
+	margin: 0 0 35px 0;
+}
+#forgotpassword{	
+	z-index: 21;
+	opacity: 0;
+}
+#login{
+	z-index: 22;
+}
+#toforgotpassword:target ~ #wrapper #forgotpassword,
+#tologin:target ~ #wrapper #login{
+	z-index: 22;
+	-webkit-animation-delay: .6s;
+	-webkit-animation-timing-function: ease-in;
+	-moz-animation-delay: .6s;
+	-moz-animation-timing-function: ease-in;
+	-o-animation-delay: .6s;
+	-o-animation-timing-function: ease-in;
+	-ms-animation-delay: .6s;
+	-ms-animation-timing-function: ease-in;
+	animation-delay: .6s;
+	animation-timing-function: ease-in;
+	-webkit-animation-name: scaleIn;
+	-moz-animation-name: scaleIn;
+	-ms-animation-name: scaleIn;
+	-o-animation-name: scaleIn;
+	animation-name: scaleIn;
+}
+#toforgotpassword:target ~ #wrapper #login,
+#tologin:target ~ #wrapper #forgotpassword{
+	-webkit-animation-timing-function: ease-out;
+	-moz-animation-timing-function: ease-out;
+	-o-animation-timing-function: ease-out;
+	-ms-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+	-webkit-animation-name: scaleOut;
+	-moz-animation-name: scaleOut;
+	-ms-animation-name: scaleOut;
+	-o-animation-name: scaleOut;
+	animation-name: scaleOut;
+}
+
+/** the actual animation **/
+.animate{
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	
+	-moz-animation-duration: 0.5s;
+	-moz-animation-fill-mode: both;
+	
+	-o-animation-duration: 0.5s;
+	-o-animation-fill-mode: both;
+	
+	-ms-animation-duration: 0.5s;
+	-ms-animation-fill-mode: both;
+	
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+}
+
+/** yerk some ugly IE fixes 'cause I know someone will ask "why does it look ugly in IE?" */
+
+.lt8 #wrapper input{
+	padding: 10px 5px 10px 32px;
+    width: 92%;
+}
+.lt8 #wrapper input[type=checkbox]{
+	width: 10px;
+	padding: 0;
+}
+.lt8 #wrapper h1{
+	color: #066A75;
+}
+.lt8 #forgotpassword{	
+	display: none;
+}
+.lt8 p.change_link,
+.ie9 p.change_link{
+	position: absolute;
+	height: 90px;
+	background: transparent;
+}
+
+/***** Detail View Display ******/
+
+.detailView{
+    margin:20px 0;
+}
+.detailView p.label, .vnform label{
+	color: #333;
+	font-family: "Times New Roman";
+	font-size: 14px;
+	font-weight:bold;
+	margin:0;
+}
+.detailView p.label:first-letter {
+    font-size: 140%;
+}
+.detailView p{
+    margin:3px 0 10px 0;
+	font-size: 14px;
+}
+.detailView div.first_half{
+    float:left;
+    width:300px;
+}
+
+/* Account Dropdown */
+
+::selection {
+    background: transparent; 
+}
+
+::-moz-selection {
+    background: transparent; 
+}
+
+.wrapper-dropdown-5 {
+    /* Size & position */
+    position: relative;
+    /*width: 200px;*/
+    margin: 0 auto;
+    padding: 0px 15px;
+
+    /* Styles */
+    /*background: #E8E8E8;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);*/
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-5:after { /* Little arrow */
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    /*right: 15px;*/
+    right: 5px;
+    margin-top: -2px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #222 transparent;
+}
+
+.wrapper-dropdown-5 .dropdown {
+    /* Size & position */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    /* Styles */
+    background: #fff;
+    /*border-radius: 0 0 5px 5px;*/
+    border: 1px solid rgba(0,0,0,0.2);
+    border-top: none;
+    border-bottom: none;
+    list-style: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    /* Hiding */
+    max-height: 0;
+    overflow: hidden;
+}
+
+.wrapper-dropdown-5 .dropdown li {
+    padding: 0 10px ;
+}
+
+.wrapper-dropdown-5 .dropdown li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    /*padding: 10px 0;*/
+    transition: all 0.3s ease-out;
+    border-bottom: 1px solid #e6e8ea;
+}
+
+.wrapper-dropdown-5 .dropdown li:last-of-type a {
+    border: none;
+}
+
+.wrapper-dropdown-5 .dropdown li i {
+    margin-right: 5px;
+    color: inherit;
+    vertical-align: middle;
+}
+
+/* Hover state */
+
+.wrapper-dropdown-5 .dropdown li:hover a {
+    color: #666;
+}
+
+/* Active state */
+
+.wrapper-dropdown-5.active {
+    /*border-radius: 5px 5px 0 0;*/
+    background: #999;
+    box-shadow: none;
+    border-bottom: none;
+    color: white;
+}
+
+.wrapper-dropdown-5.active:after {
+    border-color: #444 transparent;
+}
+
+.wrapper-dropdown-5.active .dropdown {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    max-height: 400px;
+}
+
+/* No CSS3 support: none */
+
+.wrapper-dropdown-5:focus {
+    /*border-radius: 5px 5px 0 0;
+    background: #999;
+    color: white;
+    */
+    box-shadow: none;
+    border-bottom: none;
+}
+
+.wrapper-dropdown-5:focus:after {
+    border-color: #444 transparent;
+}
+
+.wrapper-dropdown-5:focus .dropdown {
+    border-bottom: 1px solid #222;
+    max-height: 400px;
+}
+/************ End of Dropdown ***************/
